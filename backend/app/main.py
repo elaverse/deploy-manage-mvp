@@ -50,8 +50,10 @@ app.add_middleware(
 )
 
 # 프로덕션: React 빌드 서빙 (frontend/build 존재 시)
-_BASE_DIR = Path(__file__).resolve().parent.parent.parent
-_FRONTEND_BUILD = _BASE_DIR / "frontend" / "build"
+# Docker: /app/frontend/build, 로컬: project_root/frontend/build
+_FRONTEND_BUILD = Path("/app/frontend/build")
+if not _FRONTEND_BUILD.exists():
+    _FRONTEND_BUILD = Path(__file__).resolve().parent.parent.parent / "frontend" / "build"
 if _FRONTEND_BUILD.exists():
     app.mount("/static", StaticFiles(directory=_FRONTEND_BUILD / "static"), name="static")
 
