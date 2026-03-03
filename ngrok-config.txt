@@ -1,0 +1,8 @@
+# ngrok 고정 도메인 설정
+#
+# 1. https://ngrok.com 가입 후 로그인
+# 2. 대시보드 → Cloud Edge → Domains → "Claim your free domain" 클릭
+# 3. 발급된 도메인 전체를 아래에 정확히 입력 (예: 2a3b4c5d-xxxx.ngrok-free.app)
+# 4. abc123 은 예시일 뿐, 반드시 본인 ngrok 대시보드에서 확인한 도메인 사용
+#
+domain=YOUR_DOMAIN.ngrok-free.app

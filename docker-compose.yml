@@ -1,0 +1,16 @@
+# Docker Compose - 프로그램 배포 관리
+# 사용법: docker-compose up -d
+# 접속: http://localhost:8000
+#
+# 데이터 공유: backend/.env.example 를 backend/.env 로 복사 후
+# SUPABASE_URL, SUPABASE_KEY 입력 (SUPABASE_데이터공유_설정.md)
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - CORS_ALLOW_ALL=1
+    env_file:
+      - backend/.env

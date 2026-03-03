@@ -1,0 +1,10 @@
+# 빌드 최적화
+node_modules
+.git
+*.md
+backend/__pycache__
+backend/.env
+backend/data/*.json
+.env*
+*.bat
+*.ps1

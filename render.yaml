@@ -1,0 +1,17 @@
+# Render.com 배포 설정
+# 사용법: render.com 에서 이 저장소 연결 → 자동 배포 → 고정 URL 발급
+# 데이터 공유: Supabase 설정 (backend/.env 또는 Render 환경변수)
+
+services:
+  - type: web
+    name: deploy-manage
+    runtime: docker
+    plan: free
+    envVars:
+      - key: CORS_ALLOW_ALL
+        value: "1"
+      # Supabase 설정 (Render 대시보드에서 환경변수로 입력)
+      # - key: SUPABASE_URL
+      #   sync: false
+      # - key: SUPABASE_KEY
+      #   sync: false
